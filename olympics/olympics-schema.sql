@@ -1,9 +1,10 @@
-CREATE TABLE athlete (
+CREATE TABLE athletes (
      id SERIAL,
-     name text,
+     firstname text,
+     nickname text,
+     lastname text,
      gender text,
-     age int,
-     team text,
+     team text
 );
 
 CREATE TABLE event_categories (
@@ -14,19 +15,27 @@ CREATE TABLE event_categories (
 CREATE TABLE events (
      id SERIAL,
      event_category_id int,
-     name text
+     event text
 );
 
 CREATE TABLE games (
      id SERIAL,
      year int,
      season text,
-     city text,
+     city text
 );
 
-CREATE TABLE linkingtable (
+CREATE TABLE regions (
+     id SERIAL,
+     noc text,
+     country text,
+     notes text
+);
+
+CREATE TABLE event_results (
      athlete_id int,
      event_id int,
      games_id int,
+     regions_id int,
      medal text
 );
