@@ -1,0 +1,22 @@
+NAME
+	olympics - search through a olympics database
+
+SYNOPSIS
+	olympics [-h | --help] [-a | --athletes <noc>] [-m | --medals <medal>] [-y | --year <year>]
+
+DESCRIPTION
+	olympics is a search tool to find information about athletes, countries, and medal counts from our olympics database. 
+
+OPTIONS
+	-h, --help
+		Prints the usage statement.
+
+    -a, --athletes <noc>
+        Lists names of all athletes whose country matches <noc>
+
+    -m, --medals
+        DEFAULT=gold
+        List all the NOCs and the number of medals they have won, in decreasing order of the number of medals.
+
+    -y, --year <year>
+        Lists the top 10 athletes and their respetive countries with the most medals in the specified year

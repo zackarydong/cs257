@@ -23,5 +23,25 @@ GROUP BY regions.noc
 ORDER By medal_count DESC;
 
 
+SELECT athletes.firstname, athletes.lastname 
+FROM athletes, regions, event_results
+WHERE athletes.id = event_results.athlete_id 
+AND regions.id = event_results.regions_id 
+AND regions.noc = 'FRA'
+GROUP BY athletes.firstname, athletes.lastname;
+
+SELECT athletes.firstname, athletes.lastname, athletes.team, games.season, event_categories.name, COUNT(event_results.medal) AS medal_count
+FROM athletes, games, event_results, events, event_categories
+WHERE athletes.id = event_results.athlete_id
+AND games.id = event_results.games_id
+AND games.year = 1956 
+AND events.id = event_results.event_id
+AND event_categories.id = events.event_category_id
+AND event_results.medal !='NA'
+GROUP BY athletes.lastname, athletes.firstname, athletes.team, games.season, event_categories.name
+ORDER BY medal_count DESC
+LIMIT 10;
+
+
 
 
